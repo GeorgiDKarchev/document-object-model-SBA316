@@ -33,7 +33,7 @@ for (let i = 0; i < menuLinks.length; i++) {
 }
 console.log(menuLinks);
 
-//each click activate the menu item
+//each click activate the menu item (.addEventListener)
 topMenuEl.addEventListener("click", function (event) {
   event.preventDefault();
   this.querySelectorAll("a").forEach((anchor) => {
