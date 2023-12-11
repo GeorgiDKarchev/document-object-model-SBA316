@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <st>
+    <script src="./index.js" defer></script>
+    <link rel="stylesheet" href="./style.css"/>
+    <title>Document</title>
+</head>
+<body>
+  <header>
+    <nav id="navbar"></nav>
+    <div id="text-el"></div>
+  </header>
+  <div id="container">
+    <form id = "customerForm">
+      <input type="text"  placeholder="First Name" pattern="^[A-Za-z]+"
+       title="Please start your username with a letter from A-Z." required/>
+
+      <input type="text"  placeholder="Last Name" pattern="^[A-Za-z]+"
+      title="Please start your username with a letter from A-Z." required />
+
+      <input type="text"  placeholder="Email"  pattern="^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$" required
+      title="Please start your email with a letter and follow the format name@mail.com"/>
+
+      <input type="tel"  placeholder="888 888 8888" patern="[0-9]{3} [0-9]{3} [0-9]{4}"
+      maxlength="12" title="Ten digit phone" required/>
+
+      <input type="text" id="commentInput"  pattern="^[a-zA-Z]+" placeholder="Additional Comments" maxlength="100"/>
+
+      <button id="addCommentBtn">Add Comment</button>
+    <ul id="commentList">
+    </ul>
+    <main></main>
+    </form>
+  </div>
+</body>
+</html>
