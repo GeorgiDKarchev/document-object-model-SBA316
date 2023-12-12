@@ -15,6 +15,12 @@ const menuLinks = [
   },
 
 ];
+/* 
+const image = document.createElement("img");
+image.src ="holiday.jpeg";
+document.body.appendChild(image); 
+//document.body.style.backgroundImage = "holiday.jpeg" */
+ 
 
 //giving menu elements height and background-color
 const topMenuEl = document.getElementById("navbar");
@@ -69,6 +75,8 @@ function showSubLinks (event){
 // create header
 let divHeader = document.createElement("div")
 divHeader.innerHTML = "<h1>Customer form</h1>";
+divHeader.style.backgroundColor = "white"
+
 divHeader.style.color ='black'
 divHeader.style.textAlign = 'center'
 divHeader.classList.add("flex-wrap");
@@ -101,13 +109,26 @@ comentsBtn.addEventListener("click", addComment);
 console.log(addComment());
 
 //add background color to the form
-const divBackground = document.getElementById("customerForm")
-divBackground.style.backgroundColor='bisque'
+const customForm = document.getElementById("customerForm")
+customForm.style.backgroundColor='bisque'
 
 //create additional submit button and set background color
 const submit = document.createElement("button")
-submit.type = 'button';
+submit.type = 'submit';
 submit.value = 'submit';
 submit.textContent = 'Submit'
 submit.style.backgroundColor= 'var(--sub-menu-bg)'
-divBackground.appendChild(submit)
+customForm.appendChild(submit)
+
+
+
+// Addded Background image
+const divImage= document.getElementById("container");
+divImage.style.backgroundImage = 'url(holiday.jpeg)';
+
+customForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  customForm.reset();
+  const submitted = "Form is Submitted"
+  customForm.append(submitted)
+})
