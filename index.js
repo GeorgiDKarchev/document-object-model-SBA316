@@ -3,24 +3,19 @@ const menuLinks = [
   { text: "about", href: "/about" },
   {
     text: "catalog",
-    href: "#",
+    href: "/catalog",
   },
   {
     text: "orders",
-    href: "#",
+    href: "/orders",
   },
   {
     text: "account",
-    href: "#",
+    href: "/account",
   },
 
 ];
-/* 
-const image = document.createElement("img");
-image.src ="holiday.jpeg";
-document.body.appendChild(image); 
-//document.body.style.backgroundImage = "holiday.jpeg" */
- 
+
 
 //giving menu elements height and background-color
 const topMenuEl = document.getElementById("navbar");
@@ -32,12 +27,13 @@ const topMenuLinks = [];
 //creating anchor link
 for (let i = 0; i < menuLinks.length; i++) {
   const anchorLink = document.createElement("a");
-  topMenuLinks.push(anchorLink);
+  //topMenuLinks.push(anchorLink);
   anchorLink.href = menuLinks[i].href;
   anchorLink.textContent = menuLinks[i].text;
   topMenuEl.appendChild(anchorLink);
 }
-console.log(menuLinks);
+console.log('ddddddd')
+console.log(topMenuEl);
 
 //each click activate the menu item (.addEventListener)
 topMenuEl.addEventListener("click", function (event) {
@@ -59,7 +55,7 @@ topMenuEl.addEventListener("click", function (event) {
 console.log(topMenuLinks);
 
 //checking if the current event = the menu text and if it is active
-function showSubLinks (event){
+/* function showSubLinks (event){
   for (let i =0; i<menuLinks.length; i++){
     console.log(event.target.textContent)
     console.log(menuLinks[i].text)
@@ -70,7 +66,7 @@ function showSubLinks (event){
       subMenuEl.style.top = '0'
     
 }}
-}
+} */
 
 // create header
 let divHeader = document.createElement("div")
@@ -111,6 +107,7 @@ console.log(addComment());
 //add background color to the form
 const customForm = document.getElementById("customerForm")
 customForm.style.backgroundColor='bisque'
+customForm.style.color='black'
 
 //create additional submit button and set background color
 const submit = document.createElement("button")
@@ -125,10 +122,22 @@ customForm.appendChild(submit)
 // Addded Background image
 const divImage= document.getElementById("container");
 divImage.style.backgroundImage = 'url(holiday.jpeg)';
+/* divImage.style.height="100%";
+divImage.style.width="100%"; */
 
+
+//message confirmation that form is submited
+const submitText = document.createTextNode("The form has been submitted")
 customForm.addEventListener('submit', (event) => {
   event.preventDefault();
   customForm.reset();
-  const submitted = "Form is Submitted"
-  customForm.append(submitted)
+  customForm.event=setTimeout(buttonReset, 1500)
 })
+
+function buttonReset(){
+  alert('The form has been submitted')
+}
+
+/* const commantsDiv = document.createElement("div")
+commantsDiv.style.border = "thick solid #0000FF"*/
+ //customForm.appendChild(commantsDiv)
