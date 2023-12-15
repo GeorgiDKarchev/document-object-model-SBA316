@@ -83,7 +83,7 @@ document.getElementById("text-el").appendChild(divHeader);
 const comentsList = document.getElementById("commentList"); // ul
 const comentsInput = document.getElementById("commentInput"); // additional commens
 const comentsBtn = document.getElementById("addCommentBtn"); // Add Comment button
-
+comentsBtn.type ='button'
 //seting font color for comments list and input
 comentsList.style.color='black'
 comentsInput.style.color ='black'
@@ -101,7 +101,12 @@ function addComment() {
   comentsInput.focus();
 }
 // register event listener to the button
-comentsBtn.addEventListener("click", addComment);
+comentsBtn.addEventListener("click", () => {
+  addComment()
+  customForm.preventDefault();
+
+});
+
 console.log(addComment());
 
 //add background color to the form
@@ -122,22 +127,17 @@ customForm.appendChild(submit)
 // Addded Background image
 const divImage= document.getElementById("container");
 divImage.style.backgroundImage = 'url(holiday.jpeg)';
-/* divImage.style.height="100%";
-divImage.style.width="100%"; */
-
 
 //message confirmation that form is submited
 const submitText = document.createTextNode("The form has been submitted")
-customForm.addEventListener('submit', (event) => {
+
+//adding two events to the same button
+ submit.addEventListener('submit', handler, false);
+ submit.addEventListener('click', handler, false);
+
+function handler(event) {
+  alert('The form has been submitted');
+  newLi.textContent = ''
   event.preventDefault();
   customForm.reset();
-  customForm.event=setTimeout(buttonReset, 1500)
-})
-
-function buttonReset(){
-  alert('The form has been submitted')
 }
-
-/* const commantsDiv = document.createElement("div")
-commantsDiv.style.border = "thick solid #0000FF"*/
- //customForm.appendChild(commantsDiv)
